@@ -21,12 +21,7 @@ Curso de especialización en Microcontroladores ARM-Cortex M
 ### 5. STM32CubeIDE
 - https://www.st.com/en/development-tools/stm32cubeide.html
 ## ESQUEMAS Y MATERIALES DE CLASE
-### 1. CLASE 3 - 4 - 6: MATERIALES NECESARIOS
- 1. Pulsadores
- 2. Leds
- 3. Displays de 7 segmentos Cátodo comun
- 4. Resistencias de 330, 1k OHM
- 5. Transitor NPN
+
 
 ### AUTOR
 - Quino B. Jeffry
