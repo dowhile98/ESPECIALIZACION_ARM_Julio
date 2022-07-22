@@ -30,3 +30,5 @@ Curso de especialización en Microcontroladores ARM-Cortex M
 
 ### AUTOR
 - Quino B. Jeffry
+- Telf: +51 955207709
+- Correo: jeffquino@gmail.com / jeffryqb@gmail.com
