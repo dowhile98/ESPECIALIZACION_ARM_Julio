@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdtprojectproperties>
+<section name="org.eclipse.cdt.internal.ui.wizards.settingswizards.IncludePaths">
+<language name="s,S">
+
+</language>
+<language name="C Source File">
+<includepath>Inc</includepath>
+<includepath>D:\TRABAJO\UMAKER\CURSOS\ARM - NUCLEO\ESPECIALIZACION_EN_MCU_ARM\Codigo\Lib\STM32F4\CMSIS\Include</includepath>
+<includepath>D:\TRABAJO\UMAKER\CURSOS\ARM - NUCLEO\ESPECIALIZACION_EN_MCU_ARM\Codigo\Lib\STM32F4\CMSIS\Device\ST\STM32F4xx\Include</includepath>
+
+</language>
+<language name="Object File">
+
+</language>
+</section>
+<section name="org.eclipse.cdt.internal.ui.wizards.settingswizards.Macros">
+<language name="s,S">
+<macro>
+<name>DEBUG</name><value/>
+</macro>
+
+</language>
+<language name="C Source File">
+<macro>
+<name>DEBUG</name><value/>
+</macro>
+<macro>
+<name>STM32</name><value/>
+</macro>
+<macro>
+<name>STM32F401RETx</name><value/>
+</macro>
+<macro>
+<name>STM32F4</name><value/>
+</macro>
+<macro>
+<name>STM32F401xE</name><value/>
+</macro>
+
+</language>
+<language name="Object File">
+
+</language>
+</section>
+</cdtprojectproperties>
