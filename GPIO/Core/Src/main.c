@@ -20,9 +20,14 @@
 #include <stm32f4xx.h>
 #include <stdio.h>
 
+#define ITM_Port32(n)   (*((volatile unsigned long *)(0xE0000000+4*n)))
+
+
 int main(void)
 {
 	uint16_t bit;
+
+	ITM_Port32(0) = 1;
 	//HABILITAR EL RELOJ
 	printf("HABILITANDO EL RELOJ\r\n");
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN | RCC_AHB1ENR_GPIOCEN;
@@ -52,8 +57,13 @@ int main(void)
 	}
 }
 
-int __io_putchar(int ch){
+int _write(int file, char *ptr, int len)
+{
+ int DataIdx;
 
-	ITM_SendChar((uint32_t)ch);
-	return ch;
+  for(DataIdx=0; DataIdx<len; DataIdx++)
+  {
+    ITM_SendChar(*ptr++);
+  }
+  return len;
 }
