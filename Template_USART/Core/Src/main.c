@@ -42,15 +42,11 @@
 
 
 /* Private variables ---------------------------------------------------------*/
-uint8_t txbuffer[100];
-uint8_t rxbuffer[100];
-uint16_t len;
 
-USART_Handle_t usart2;
 
 /* Private function prototypes -----------------------------------------------*/
 void USART2_GPIOInit(void);
-void UART_Printf(char *format,...);
+
 
 /* Private user code ---------------------------------------------------------*/
 
@@ -63,32 +59,11 @@ int main(void)
   delay_init_it();
   USART2_GPIOInit();
   USART_Init(USART2, 16E+6, 115200, 0);
-
-  RCC->AHB1ENR |= GPIOX_CLOCK(LED);
-  GPIOX_MODER(MODE_OUT, LED);
-  RCC->AHB1ENR |= GPIOX_CLOCK(BUTTON);
-  GPIOX_MODER(MODE_DIGITAL_INPUT, BUTTON);
-//  //->IT
-//  USART2->CR1 |=  USART_CR1_RXNEIE;
-//  NVIC_EnableIRQ(USART2_IRQn);
-//
-//  len = sprintf((char*)txbuffer, "hola mundo IT\r\n");
-//
-//  USART2->CR1 |= USART_CR1_TXEIE;
-  usart2.pUSARTx = USART2;
-  USART_IRQInterruptConfig(USART2_IRQn, ENABLE);
-  USART_IRQPriorityConfig(USART2_IRQn, 1);
-
-  USART_ReceiveDataIT(&usart2, rxbuffer,1);
+  printf("CONFIGURACION CORRECTA\r\n");
   /* Infinite loop */
   while (1)
   {
-    if(GPIOX_IDR(BUTTON) == 0){
-    	printf("1\r\n");
-    }else{
-    	printf("0\r\n");
-    }
-    delay_ms(50);
+    
   }
 }
 
@@ -105,20 +80,6 @@ void USART2_GPIOInit(void){
 	GPIOX_AFR(7U, USART2_RX);
 	return;
 }
-
-
-void USART_ApplicationEventCallback(USART_Handle_t *pUSARTHandle,uint8_t event){
-	if(event == USART_EVENT_RX_CMPLT){
-		//todo
-		USART_ReceiveDataIT(&usart2, rxbuffer, 1);
-		if(rxbuffer[0] == '1'){
-			GPIOX_ODR(LED) = 1;
-		}else{
-			GPIOX_ODR(LED) = 0;
-		}
-	}
-}
-
 
 
 void UART_Printf(char *format,...){

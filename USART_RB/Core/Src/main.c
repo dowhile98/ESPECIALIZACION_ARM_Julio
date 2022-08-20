@@ -25,7 +25,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
-
+#include "lwrb/lwrb.h"
 /* Private typedef -----------------------------------------------------------*/
 
 
@@ -42,6 +42,10 @@
 
 
 /* Private variables ---------------------------------------------------------*/
+lwrb_t buff;
+uint8_t buff_data[30];
+
+
 uint8_t txbuffer[100];
 uint8_t rxbuffer[100];
 uint16_t len;
@@ -52,6 +56,22 @@ USART_Handle_t usart2;
 void USART2_GPIOInit(void);
 void UART_Printf(char *format,...);
 
+
+void
+my_buff_evt_fn(lwrb_t* buff, lwrb_evt_type_t type, size_t len) {
+    switch (type) {
+        case LWRB_EVT_RESET:
+            printf("[EVT] Buffer reset event!\r\n");
+            break;
+        case LWRB_EVT_READ:
+            printf("[EVT] Buffer read event: %d byte(s)!\r\n", (int)len);
+            break;
+        case LWRB_EVT_WRITE:
+            printf("[EVT] Buffer write event: %d byte(s)!\r\n", (int)len);
+            break;
+        default: break;
+    }
+}
 /* Private user code ---------------------------------------------------------*/
 
 /**
@@ -79,16 +99,27 @@ int main(void)
   USART_IRQInterruptConfig(USART2_IRQn, ENABLE);
   USART_IRQPriorityConfig(USART2_IRQn, 1);
 
-  USART_ReceiveDataIT(&usart2, rxbuffer,1);
+
+  lwrb_init(&buff, buff_data, sizeof(buff_data));
+  lwrb_set_evt_fn(&buff, my_buff_evt_fn);
+//  lwrb_write(&buff, "0123", 4);
+//
+//  lwrb_write(&buff, "454", 3);
+//
+//  lwrb_read(&buff, rxbuffer, 3);
+//
+//  lwrb_write(&buff, "454", 3);
+
+  USART_ReceiveDataIT(&usart2, rxbuffer,4);
   /* Infinite loop */
   while (1)
   {
-    if(GPIOX_IDR(BUTTON) == 0){
-    	printf("1\r\n");
-    }else{
-    	printf("0\r\n");
-    }
-    delay_ms(50);
+	  if(len == 4){
+		  lwrb_read(&buff, txbuffer, 16);
+		  printf("LECTURA->%s\r\n",txbuffer);
+		  len = 0;
+	  }
+
   }
 }
 
@@ -110,12 +141,10 @@ void USART2_GPIOInit(void){
 void USART_ApplicationEventCallback(USART_Handle_t *pUSARTHandle,uint8_t event){
 	if(event == USART_EVENT_RX_CMPLT){
 		//todo
-		USART_ReceiveDataIT(&usart2, rxbuffer, 1);
-		if(rxbuffer[0] == '1'){
-			GPIOX_ODR(LED) = 1;
-		}else{
-			GPIOX_ODR(LED) = 0;
-		}
+		USART_ReceiveDataIT(&usart2, rxbuffer, 4);
+
+		lwrb_write(&buff, rxbuffer, 4);
+		len++;
 	}
 }
 
