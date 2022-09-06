@@ -1,0 +1,11 @@
+main.c:73:5:main	8	static
+main.c:99:6:SPI1_GPIOSlaveInit	4	static
+main.c:120:6:SPI1_GPIOMasterInit	4	static
+main.c:140:6:SPI_SlaveInit	4	static
+main.c:162:6:SPI1_Init	4	static
+main.c:190:6:SPI_SendData	24	static
+main.c:215:6:SPI_SendReceiveData	24	static
+main.c:250:6:SPI_ReceiveData	24	static
+main.c:279:6:SPI_MasterReceiveData	24	static
+main.c:316:6:delay_ms	24	static
+main.c:328:6:PLL_Config	8	static
