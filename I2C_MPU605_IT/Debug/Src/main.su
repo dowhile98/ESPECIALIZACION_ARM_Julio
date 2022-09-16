@@ -1,0 +1,11 @@
+D:/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/CMSIS/Include/core_cm4.h:1688:22:__NVIC_EnableIRQ	16	static
+../Src/main.c:79:5:main	8	static
+../Src/main.c:134:6:PLL_Config	8	static
+../Src/main.c:168:6:HSE_Config	8	static
+../Src/main.c:176:6:flash_cofig	8	static
+../Src/main.c:190:6:I2C1_GPIOInit	4	static
+../Src/main.c:210:6:I2C_Init	24	static
+../Src/main.c:275:6:I2C_MasterSendData	32	static
+../Src/main.c:319:6:I2C_MasterReceiveData	32	static
+../Src/main.c:377:6:GPIO_Config	8	static
+../Src/main.c:402:6:EXTI9_5_IRQHandler	4	static

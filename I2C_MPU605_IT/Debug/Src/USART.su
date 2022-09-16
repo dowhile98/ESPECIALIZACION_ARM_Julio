@@ -1,0 +1,14 @@
+D:/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/CMSIS/Include/core_cm4.h:1688:22:__NVIC_EnableIRQ	16	static
+D:/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/CMSIS/Include/core_cm4.h:1724:22:__NVIC_DisableIRQ	16	static,ignoring_inline_asm
+D:/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.0/Drivers/CMSIS/Include/core_cm4.h:1816:22:__NVIC_SetPriority	16	static
+../Src/USART.c:13:13:USART1_PinoutConfig	4	static
+../Src/USART.c:29:13:USART2_PinoutConfig	4	static
+../Src/USART.c:50:6:USART_Init	144	static
+../Src/USART.c:82:6:USART_SendData	32	static
+../Src/USART.c:118:6:USART_ReceiveData	32	static
+../Src/USART.c:152:9:USART_SendDataIT	32	static
+../Src/USART.c:170:9:USART_ReceiveDataIT	32	static
+../Src/USART.c:187:6:USART_IRQInterruptConfig	16	static
+../Src/USART.c:197:6:USART_IRQPriorityConfig	16	static
+../Src/USART.c:204:6:USART_IRQHandling	32	static
+../Src/USART.c:377:13:USART_ApplicationEventCallback	16	static

@@ -1,0 +1,17 @@
+../Src/LCD.c:85:6:LCD_Init	16	static
+../Src/LCD.c:161:6:LCD_Clear	8	static
+../Src/LCD.c:165:6:LCD_Puts	16	static
+../Src/LCD.c:187:6:LCD_DisplayOn	8	static
+../Src/LCD.c:192:6:LCD_DisplayOff	8	static
+../Src/LCD.c:197:6:LCD_BlinkOn	8	static
+../Src/LCD.c:202:6:LCD_BlinkOff	8	static
+../Src/LCD.c:207:6:LCD_CursorOn	8	static
+../Src/LCD.c:212:6:LCD_CursorOff	8	static
+../Src/LCD.c:217:6:LCD_ScrollLeft	8	static
+../Src/LCD.c:221:6:LCD_ScrollRight	8	static
+../Src/LCD.c:224:6:LCD_CreateChar	24	static
+../Src/LCD.c:235:6:LCD_PutCustom	16	static
+../Src/LCD.c:241:6:LCD_Printf	104	static
+../Src/LCD.c:319:13:LCD_Cmd	32	static
+../Src/LCD.c:356:13:LCD_Data	32	static
+../Src/LCD.c:390:13:LCD_CursorSet	24	static

@@ -1,0 +1,13 @@
+../Src/MPU6050.c:72:18:MPU6050_Init	24	static
+../Src/MPU6050.c:110:18:MPU6050_SetGyroscope	24	static
+../Src/MPU6050.c:141:18:MPU6050_SetAccelerometer	24	static
+../Src/MPU6050.c:172:18:MPU6050_SetDataRate	16	static
+../Src/MPU6050.c:186:18:MPU6050_EnableInterrupts	24	static
+../Src/MPU6050.c:203:18:MPU6050_DisableInterrupts	16	static
+../Src/MPU6050.c:215:18:MPU6050_ReadInterrupts	24	static
+../Src/MPU6050.c:232:18:MPU6050_ReadAccelerometer	24	static
+../Src/MPU6050.c:247:18:MPU6050_ReadGyroscope	24	static
+../Src/MPU6050.c:262:18:MPU6050_ReadTemperature	24	static
+../Src/MPU6050.c:277:18:MPU6050_ReadAll	32	static
+../Src/MPU6050.c:305:6:I2C_Read	16	static
+../Src/MPU6050.c:313:6:I2C_Write8	24	static
